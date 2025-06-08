@@ -7,28 +7,22 @@
 
 // Combo key sequences
 const uint16_t PROGMEM _st_combo[] = {KC_S, KC_T, COMBO_END};
-const uint16_t PROGMEM _cd_combo[] = {KC_C, KC_D, COMBO_END};
 const uint16_t PROGMEM _fp_combo[] = {KC_F, KC_P, COMBO_END};
 
-const uint16_t PROGMEM _56_combo[] = {KC_5, KC_6, COMBO_END};
-const uint16_t PROGMEM _23_combo[] = {KC_2, KC_3, COMBO_END};
-const uint16_t PROGMEM _89_combo[] = {KC_8, KC_9, COMBO_END}; 
+const uint16_t PROGMEM _56_combo[] = {RSFT(KC_5), RSFT(KC_6), COMBO_END};
+const uint16_t PROGMEM _89_combo[] = {RSFT(KC_8), RSFT(KC_9), COMBO_END}; 
 
-const uint16_t PROGMEM ASTRLPRN_combo[] = {KC_ASTR, KC_LPRN, COMBO_END};
-const uint16_t PROGMEM CBR_combo[] = {KC_LCBR, KC_RCBR, COMBO_END};
-const uint16_t PROGMEM HASHDLR_combo[] = {KC_HASH, KC_DLR, COMBO_END};
+const uint16_t PROGMEM ASTRLPRN_combo[] = {KC_QUOT,   KC_5,         COMBO_END};
+const uint16_t PROGMEM HASHDLR_combo[]  = {KC_3,      KC_DLR,       COMBO_END};
 
 // Combo associations
 combo_t key_combos[] = {
-    [ST_ESC]     = COMBO(_st_combo, KC_ESC),
-    [CD_TAB]     = COMBO(_cd_combo, KC_TAB),
-    [FP_CAPS]    = COMBO(_fp_combo, KC_CAPS),
-    [_56]        = COMBO(_56_combo, KC_ESC),
-    [_23]        = COMBO(_23_combo, KC_TAB),
-    [_89]        = COMBO(_89_combo, KC_CAPS),
-    [ASTRLPRN]   = COMBO(ASTRLPRN_combo, KC_ESC),
-    [CBR]        = COMBO(CBR_combo, KC_TAB),
-    [HASHDLR]    = COMBO(HASHDLR_combo, KC_CAPS),
+    [ST_TAB]     = COMBO(_st_combo, KC_TAB),
+    [FP_ESC]    = COMBO(_fp_combo, KC_ESC),
+    [_56]        = COMBO(_56_combo, KC_TAB),
+    [_89]        = COMBO(_89_combo, KC_ESC),
+    [ASTRLPRN]   = COMBO(ASTRLPRN_combo, KC_TAB),
+    [HASHDLR]    = COMBO(HASHDLR_combo, KC_ESC),
 };
 
 // ============================================================================

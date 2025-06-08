@@ -22,14 +22,11 @@ enum layers {
 // COMBO DEFINITIONS
 // ============================================================================
 enum combo_events {
-    ST_ESC,       // S+T = Escape
-    CD_TAB,       // C+D = Tab
-    FP_CAPS,      // F+P = Caps Lock
+    ST_TAB,       // S+T = Escape
+    FP_ESC,      // F+P = Caps Lock
     _56,          // 5+6 combo
-    _23,          // 2+3 combo
     _89,          // 8+9 combo
     ASTRLPRN,     // *+(
-    CBR,          // {+} combo
     HASHDLR,      // #+$ combo
     COMBO_LENGTH
 };
