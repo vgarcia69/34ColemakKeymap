@@ -10,11 +10,11 @@
 const uint16_t PROGMEM _st_combo[] = {KC_S, KC_T, COMBO_END};
 const uint16_t PROGMEM _fp_combo[] = {KC_F, KC_P, COMBO_END};
 
-const uint16_t PROGMEM _56_combo[] = {RSFT(KC_5), RSFT(KC_6), COMBO_END};
-const uint16_t PROGMEM _89_combo[] = {RSFT(KC_8), RSFT(KC_9), COMBO_END}; 
+const uint16_t PROGMEM _56_combo[] = {KC_5, KC_6, COMBO_END};
+const uint16_t PROGMEM _89_combo[] = {KC_8, KC_9, COMBO_END}; 
 
-const uint16_t PROGMEM ASTRLPRN_combo[] = {KC_QUOT,   KC_5,         COMBO_END};
-const uint16_t PROGMEM HASHDLR_combo[]  = {KC_3,      KC_DLR,       COMBO_END};
+const uint16_t PROGMEM ASTRLPRN_combo[] = {KC_ASTR,   KC_LPRN,         COMBO_END};
+const uint16_t PROGMEM HASHDLR_combo[]  = {KC_HASH,      KC_DLR,       COMBO_END};
 
 // Combo associations
 combo_t key_combos[] = {
