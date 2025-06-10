@@ -24,7 +24,7 @@ enum layers {
 enum combo_events {
     ST_TAB,       // S+T = Escape
     FP_ESC,      // F+P = Tab
-    LU_CPSL,     // L+U = Caps Lock
+    LU_CAPS,     // L+U = Caps Lock
     _56,          // 5+6 combo
     _89,          // 8+9 combo
     ASTRLPRN,     // *+(
