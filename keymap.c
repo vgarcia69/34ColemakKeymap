@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_NUMBERS] = LAYOUT_split_3x5_3(
         RSFT(KC_SLSH),KC_7,         KC_8,         KC_9,         KC_TILD,   /**/        KC_MPRV,      KC_MPLY,      KC_MNXT,      XXX,          KC_BSPC,
         KC_SLSH,      KC_4,         KC_5,         KC_6,         KC_GRV,    /**/        KC_MUTE,      KC_VOLD,      KC_VOLU,      XXX,          KC_DEL,
-        KC_0,         KC_1,         KC_2,         KC_3,         XXX,       /**/        XXX,          XXX,          XXX,          XXX,     
+        KC_0,         KC_1,         KC_2,         KC_3,         XXX,       /**/        XXX,          XXX,          XXX,          XXX,          XXX,
                                     XXX,          KC_TRNS,      TO(_BASE), /**/        TO(_BASE), KC_ENT,       XXX
     ),
 
