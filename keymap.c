@@ -37,78 +37,77 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
      * Layer 0: Base (Colemak)
      * ┌─────┬─────┬─────┬─────┬─────┐       ┌─────┬─────┬─────┬─────┬─────┐
-     * │  Q  │  W  │  F  │  P  │  B  │       │  J  │  L  │  U  │  Y  │BSPC │
+     * │  Q  │  W  │  F  │  P  │  B  │       │  J  │  L  │  U  │  Y  │  ;  │
      * ├─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┤
-     * │  A  │CTL/R│GUI/S│ALT/T│  G  │       │  M  │ALT/N│GUI/E│CTL/I│  O  │
+     * │  A  │CTL/R│GUI/S│ALT/T│ M/G │       │ M/M │ALT/N│GUI/E│CTL/I│  O  │
      * ├─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┤
-     * │  Z  │  X  │  C  │  D  │  V  │       │  K  │  H  │  ,  │  .  │  ;  │
+     * │  Z  │  X  │  C  │  D  │  V  │       │  K  │  H  │  ,  │  .  │  /  │
      * └─────┴─────┴─────┼─────┼─────┤       ├─────┼─────┼─────┴─────┴─────┘
-     *                   │ SPC │SHIFT│       │NUM  │ENTER|
+     *                   │F/SPC│SHIFT│       │N/ENT|BSPC │
      *                   └─────┴─────┘       └─────┴─────┘
      */
     [_BASE] = LAYOUT_split_3x5_3(
-        KC_Q,         KC_W,         KC_F,         KC_P,         KC_B,                  /**/        KC_J,         KC_L,         KC_U,            KC_Y,           KC_BSPC,
-        KC_A,         LCTL_T(KC_R), LGUI_T(KC_S), LALT_T(KC_T), KC_G,                  /**/        KC_M,         RALT_T(KC_N), RGUI_T(KC_E),    RCTL_T(KC_I),   KC_O,
-        KC_Z,         KC_X,         KC_C,         KC_D,         KC_V,                  /**/        KC_K,         KC_H,         KC_COMM,         KC_DOT,         KC_SCLN,
-                                    XXX,          LT(_FUNCTION, KC_SPC), KC_LSFT,      /**/        TO(_MEDIA), KC_ENT,       XXX
+        KC_Q,         KC_W,         KC_F,         KC_P,         KC_B,                  /**/        KC_J,              KC_L,         KC_U,            KC_Y,           KC_SCLN,
+        KC_A,         LCTL_T(KC_R), LGUI_T(KC_S), LALT_T(KC_T), LT(_MEDIA, KC_G),      /**/        LT(_MEDIA, KC_M),  RALT_T(KC_N), RGUI_T(KC_E),    RCTL_T(KC_I),   KC_O,
+        KC_Z,         KC_X,         KC_C,         KC_D,         KC_V,                  /**/        KC_K,              KC_H,         KC_COMM,         KC_DOT,         KC_SLSH,
+                                    XXX,          LT(_FUNCTION, KC_SPC), KC_LSFT,      /**/        LT(_NUMBERS, KC_ENT),KC_BSPC,    XXX
     ),
 
     /*
      * Layer 1: Numbers and Symbols
      * ┌─────┬─────┬─────┬─────┬─────┐       ┌─────┬─────┬─────┬─────┬─────┐
-     * │  ?  │  7  │  8  │  9  │  ~  │       |MPRV │MPLY │MNXT │ --- |BSPC │
+     * │ --- │  7  │  8  │  9  │  ~  │       |MPRV │MPLY │MNXT │ --- | --- │
      * ├─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┤
-     * │  /  │  4  │  5  │  6  │  `  │       | MUTE│VOLD │VOLU | --- | DEL │
+     * │ --- │  4  │  5  │  6  │  `  │       | MUTE│VOLD │VOLU | --- | DEL │
      * ├─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┤
      * │  0  │  1  │  2  │  3  │ --- │       │ --- │ --- │ --- │ --- │ --- │
      * └─────┴─────┴─────┼─────┼─────┤       ├─────┼─────┼─────┴─────┴─────┘
-     *                   │ --- │BASE │       │BASE │ENTER│
+     *                   │ SPC │SHIFT│       │ENTER│BSPC │
      *                   └─────┴─────┘       └─────┴─────┘
      */
     [_NUMBERS] = LAYOUT_split_3x5_3(
-        RSFT(KC_SLSH),KC_7,         KC_8,         KC_9,         KC_TILD,   /**/        KC_MPRV,      KC_MPLY,      KC_MNXT,      XXX,          KC_BSPC,
-        KC_SLSH,      KC_4,         KC_5,         KC_6,         KC_GRV,    /**/        KC_MUTE,      KC_VOLD,      KC_VOLU,      XXX,          KC_DEL,
+        XXX,          KC_7,         KC_8,         KC_9,         KC_TILD,   /**/        KC_MPRV,      KC_MPLY,      KC_MNXT,      XXX,          XXX,
+        XXX,          KC_4,         KC_5,         KC_6,         KC_GRV,    /**/        KC_MUTE,      KC_VOLD,      KC_VOLU,      XXX,          KC_DEL,
         KC_0,         KC_1,         KC_2,         KC_3,         XXX,       /**/        XXX,          XXX,          XXX,          XXX,          XXX,
-                                    XXX,          KC_TRNS,      TO(_BASE), /**/        TO(_BASE), KC_ENT,       XXX
+                                    XXX,          KC_TRNS,      KC_LSFT,   /**/        KC_ENTER,     KC_BSPC,      XXX
     ),
-
 
     /*
      * Layer 2: Media and Advanced Symbols
      * ┌─────┬─────┬─────┬─────┬─────┐       ┌─────┬─────┬─────┬─────┬─────┐
-     * │  !  │  @  │  #  │  $  │  %  │       │  _  │  +  │  "  │  |  │BSPC │
+     * │  !  │  @  │  #  │  $  │  %  │       │  _  │  +  │  "  │  |  │  :  │
      * ├─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┤
      * │  ^  │  &  │  *  |  (  |  )  │       │  -  │  =  │  '  │  \  │ DEL │
      * ├─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┤
-     * │ --- │  [  │  {  │  }  │  ]  │       │ --- │  /  │  <  │  >  │  :  │
+     * │ --- │  [  │  {  │  }  │  ]  │       │ --- │ --- │  <  │  >  │  ?  │
      * └─────┴─────┴─────┼─────┼─────┤       ├─────┼─────┼─────┴─────┴─────┘
-     *                   │ --- │BASE │       │ENTER│MEDIA│                  
+     *                   │ SPC │SHIFT│       │BSPC │ENTER│                  
      *                   └─────┴─────┘       └─────┴─────┘                  
      */
     [_MEDIA] = LAYOUT_split_3x5_3(
-        KC_EXLM,      KC_AT,        KC_HASH,      KC_DLR,       KC_PERC,  /**/        KC_UNDS,      KC_PLUS,      KC_DQUO,      KC_PIPE,      KC_BSPC,
+        KC_EXLM,      KC_AT,        KC_HASH,      KC_DLR,       KC_PERC,  /**/        KC_UNDS,      KC_PLUS,      KC_DQUO,      KC_PIPE,      RSFT(KC_SCLN),
         KC_CIRC,      KC_AMPR,      KC_ASTR,      KC_LPRN,      KC_RPRN,  /**/        KC_MINS,      KC_EQL,       KC_QUOT,      KC_BSLS,      KC_DEL,
-        XXX,          KC_LBRC,      KC_LCBR,      KC_RCBR,      KC_RBRC,  /**/        XXX,          KC_SLSH,      RSFT(KC_COMM),RSFT(KC_DOT), RSFT(KC_SCLN), 
-                                    XXX,          KC_TRNS,      TO(_BASE),/**/        TO(_NUMBERS), KC_ENT,    XXX
+        XXX,          KC_LBRC,      KC_LCBR,      KC_RCBR,      KC_RBRC,  /**/        XXX,          XXX,      RSFT(KC_COMM),RSFT(KC_DOT),     RSFT(KC_SLSH), 
+                                    XXX,          KC_TRNS,      KC_LSFT,  /**/        KC_ENT,      KC_BSPC,       XXX
     ),
 
     /*
      * Layer 3: Function Keys and Navigation
      * ┌─────┬─────┬─────┬─────┬─────┐       ┌─────┬─────┬─────┬─────┬─────┐
-     * │ --- │ F1  │ F2  │ F3  │ F4  │       │PSCR │PGDN │PGUP │ --- │BSPC │
+     * │ --- │ F7  │ F8  │ F9  │ F10 │       │ --- |PSCR │PGDN │PGUP │ --- │
      * ├─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┤
-     * │ --- │ F5  │ F6  │ F7  │ F8  │       | --- │LEFT │DOWN │ UP  │RGHT │
+     * │ --- │ F4  │ F5  │ F6  │ F11 │       | --- │LEFT │DOWN │ UP  │RGHT │
      * ├─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┤
-     * │ --- │ F9  │F10  │F11  │F12  │       │HOME │ INS │ END │ --- │ --- │
+     * │ --- │ F1  │ F2  │ F3  │ F12 │       │ --- |HOME │ INS │ END │ --- │
      * └─────┴─────┴─────┼─────┼─────┤       ├─────┼─────┼─────┴─────┴─────┘
-     *                   │ --- │BASE │       │ENTER│TRNS │
+     *                   │     │LCTRL│       │ENTER│ BSPC│
      *                   └─────┴─────┘       └─────┴─────┘
      */
     [_FUNCTION] = LAYOUT_split_3x5_3(
-        XXX,          KC_F1,        KC_F2,        KC_F3,        KC_F4,      /**/    XXX,          KC_PSCR,      KC_PGDN,      KC_PGUP,      KC_BSPC,
-        XXX,          KC_F5,        KC_F6,        KC_F7,        KC_F8,      /**/    XXX,          KC_LEFT,      KC_DOWN,      KC_UP,        KC_RGHT,
-        XXX,          KC_F9,        KC_F10,       KC_F11,       KC_F12,     /**/    XXX,          KC_HOME,      KC_INS,       KC_END,       XXX,
-                                    XXX,          KC_TRNS,      TO(_BASE),  /**/    KC_TRNS,      KC_ENT,       XXX
+        XXX,          KC_F7,        KC_F8,        KC_F9,        KC_F10,     /**/    XXX,          KC_PSCR,      KC_PGDN,      KC_PGUP,      XXX,
+        XXX,          KC_F4,        KC_F5,        KC_F6,        KC_F11,     /**/    XXX,          KC_LEFT,      KC_DOWN,      KC_UP,        KC_RGHT,
+        XXX,          KC_F1,        KC_F2,        KC_F3,        KC_F12,     /**/    XXX,          KC_HOME,      KC_INS,       KC_END,       XXX,
+                                    XXX,          KC_TRNS,      KC_LCTL,   /**/     KC_ENT,       KC_BSPC,       XXX
     ),
 };
 
